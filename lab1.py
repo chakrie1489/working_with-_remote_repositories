@@ -1,6 +1,14 @@
+"""
+number guessing game
+allows the users to play a simple guessing game".
+"""
+
 import random
 
 def start_game():
+    """
+    starts the game.
+    """
     print("Welcome to the number guessing game!")
     print("I have a number between 1 and 100 in my mind.")
     print(" try guessing it")
@@ -27,14 +35,29 @@ def start_game():
             break
 
 def play_again():
+    """
+    function to play the game again if the player wishes so
+    """
     while True:
         choice = input("Do you want to play again? yes/no: ").strip().lower()
         if choice == "yes":
             return True
-        elif choice == "no":
+        if choice == "no":
             return False
-        else:
-            print("Invalid input. type 'yes' or 'no'.")
+        print("Invalid input. type 'yes' or 'no'.")
+
+def main():
+    """
+    main function.
+    """
+    while True:
+        start_game()
+        if not play_again():
+            print("Goodbye! Thanks for playing.")
+            break
+
+if __name__ == "__main__":
+    main()
 
 while True:
     start_game()
